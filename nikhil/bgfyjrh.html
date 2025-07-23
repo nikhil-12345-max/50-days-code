@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="mybutton">click me</button>
+    <p id="myElement">Hover over me</p>
+
+    <p id="myElement">Hover over me</p>
+    <input type="text ">
+
+    <div class="section">
+        <h2>keyup Event</h2>
+        <input type="text" id="keyup" placeholder="press any key">
+    </div>
+    <input type="text" id="myInput">
+
+    <select id="myInput">
+        <option>Apple</option>
+        <option>Banana</option>
+    </select>
+    <div class="section">
+        <h2>submit Event</h2>
+        <form id="myForm">
+            <input type="text" placeholder="Your name">
+            <button type="submit">submit</button>
+        </form>
+    </div>
+
+
+    <p id="dblclick">hiii</p>
+    <input type="text" id="uu">
+    <!-- <input type="text" id="myInput"> -->
+
+    <input type="text" id="ip">
+    <p id="output"></p>
+
+    <button id="decrement">decrement</button>
+    <p id="count">0</p>
+
+    <button id="increment">increment</button>
+    <script>
+        let count = 0;
+        document.getElementById("decrement").addEventListener("click", function () {
+            count = count - 1;
+
+            document.getElementById("count").innerHTML = count;
+        });
+        document.getElementById("increment").addEventListener("click", function () {
+            count = count + 1;
+            document.getElementById("count").innerHTML = count
+        });
+
+    </script>
+<script>
+ let fruits=["orange","apple"]
+fruits.push("grape");
+console.log(fruits)
+
+</script>
+
+
+
+
+
+
+
+
+
+    <script src="javascript.js"></script>
+</body>
+
+
+</html>

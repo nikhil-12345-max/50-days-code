@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <style>
+  /*  * {
+     <!-- box-sizing: border-box;-->
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-image: url("https://thumbs.dreamstime.com/b/blue-sky-clouds-natural-background-92316401.jpg");
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }*/
+  html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center;     /* centers vertically */
+  background-image: url("https://thumbs.dreamstime.com/b/blue-sky-clouds-natural-background-92316401.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  color: #154dd8;
+}
+
+.weather-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 320px;
+}
+
+
+/*
+    .weather-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px 40px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      width: 320px;
+
+    }*/
+   
+
+    .weather-container input {
+      padding: 10px;
+      width: 80%;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      margin-bottom: 10px;
+    }
+
+    .weather-container button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffffff;
+      color: #2980b9;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .weather-container button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .weather-info {
+      margin-top: 20px;
+    }
+
+    .weather-info h2 {
+      margin: 0;
+    }
+
+    .weather-info p {
+      margin: 5px 0;
+    }
+
+    .icon {
+      width: 80px;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-container">
+  <h1>Weather App</h1>
+  <input type="text" id="cityInput" placeholder="Enter city name" />
+  <br />
+  <button id="getWeatherBtn">Get Weather</button>
+  <div class="weather-info" id="weatherResult"></div>
+</div>
+
+<script>
+  async function getWeather() {
+    const city = document.getElementById('cityInput').value.trim();
+    const resultEl = document.getElementById('weatherResult');
+
+    if (!city) {
+      resultEl.innerHTML = '<p>❗ Please enter a city name.</p>';
+      return;
+    }
+
+    const apiKey = '85aa86ef4dac3f26edfad725a1c290f2'; // 🔑 Replace with your key
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${apiKey}&units=metric`;
+
+    resultEl.innerHTML = '<p>🔄 Fetching weather...</p>';
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        if (response.status === 404) {
+          resultEl.innerHTML = '<p>❌ City not found!</p>';
+        } else {
+          resultEl.innerHTML = `<p>⚠ Error: ${response.statusText} (${response.status})</p>`;
+        }
+        return;
+      }
+
+      const data = await response.json();
+      const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+      resultEl.innerHTML = `
+        <h2>${data.name}, ${data.sys.country}</h2>
+        <img class="icon" src="${iconUrl}" alt="Weather Icon" />
+        <p><strong>${data.weather[0].main}</strong> – ${data.weather[0].description}</p>
+        <p>🌡 Temp: ${data.main.temp}°C</p>
+        <p>💧 Humidity: ${data.main.humidity}%</p>
+        <p>💨 Wind: ${data.wind.speed} m/s</p>
+      `;
+    } catch (err) {
+      console.error(err);
+      resultEl.innerHTML = '<p>⚠ Network error fetching data.</p>';
+    }
+  }
+
+  document.getElementById('getWeatherBtn')
+          .addEventListener('click', getWeather);
+</script>

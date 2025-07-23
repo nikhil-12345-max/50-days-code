@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete HTML Example Page">
+  <meta name="author" content="Your Name">
+  <title>Complete HTML Page</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Welcome to My Complete HTML Page</h1>
+    <p>This page includes all major HTML elements and concepts.</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#media">Media</a>
+    <a href="#form">Contact</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <section id="about">
+      <h2>About HTML</h2>
+      <p>HTML stands for <strong>HyperText Markup Language</strong>. It's the standard language for creating web pages.</p>
+      <p>You can write code like this: <code>&lt;h1&gt;Hello&lt;/h1&gt;</code></p>
+    </section>
+
+    <article>
+      <h2>Lists in HTML</h2>
+      <h3>Unordered List</h3>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+
+      <h3>Ordered List</h3>
+      <ol>
+        <li>Install VS Code</li>
+        <li>Learn HTML</li>
+        <li>Build a website</li>
+      </ol>
+
+      <h3>Description List</h3>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Markup language for web pages</dd>
+        <dt>CSS</dt>
+        <dd>Style language for HTML</dd>
+      </dl>
+    </article>
+
+    <section id="media">
+      <h2>Media Content</h2>
+      <h3>Image</h3>
+      <img src="https://via.placeholder.com/150" alt="Placeholder image">
+
+      <h3>Video</h3>
+      <video controls width="300">
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <h3>Audio</h3>
+      <audio controls>
+        <source src="sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </section>
+
+    <aside>
+      <h3>Did You Know?</h3>
+      <p>HTML5 introduced semantic tags like <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;aside&gt;</code>.</p>
+    </aside>
+
+    <section>
+      <h2>Table Example</h2>
+      <table>
+        <caption>Student Marks</caption>
+        
+          <tr>
+            <th>Name</th>
+            <th>Math</th>
+            <th>Science</th>
+          </tr>
+        
+        <tbody>
+          <tr>
+            <td>Alice</td>
+            <td>90</td>
+            <td>88</td>
+          </tr>
+          <tr>
+            <td>Bob</td>
+            <td>76</td>
+            <td>91</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="form">
+      <h2>Contact Form</h2>
+      <form action="/submit" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <label for="subject">Subject:</label><br>
+        <select id="subject" name="subject">
+          <option value="html">HTML</option>
+          <option value="css">CSS</option>
+          <option value="js">JavaScript</option>
+        </select><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+
+        <input type="checkbox" id="subscribe" name="subscribe">
+        <label for="subscribe">Subscribe to newsletter</label><br><br>
+
+        <input type="submit" value="click on me">
+      </form>
+    </section>
+
+    <section>
+      <h2>Other HTML Features</h2>
+      <p>Special characters: &copy; &euro; &hearts; &lt; &gt;</p>
+      <p>Line break and horizontal rule:</p>
+      Line 1<br>
+      Line 2<br>
+      <hr>
+      <h3>Embedded Content</h3>
+      <iframe src="https://example.com" width="300" height="200" title="Example Site"></iframe>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
+</body>
+</html>

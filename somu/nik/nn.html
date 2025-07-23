@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="my-id"></p>
+    <script>
+        let products=[
+            {name:"laptop",price:60000,category:"electronics",stock:4},
+            {name:"book",price:100,category:"book",stock:5},
+            {name:"tata car",price:150000,category:"cars",stock:2},
+            {name:"mobile",price:20000,category:"electronics",stock:10},
+            {name:"spects",price:2000,category:"spectacles",stock:7},
+            {name:"shirt",price:500,category:"clothing",stock:20},
+            {name:"headphones",price:1000,category:"electronics",stock:8},
+            {name:"flats",price:650,category:"cheppal",stock:7},
+            {name:"mouse",price:1500,category:"electronics",stock:10},
+            {name:"fridge",price:15000,category:"electronics",stock:12}
+        ];
+        let set=products.filter(thing=>
+        thing.category==="electronics"  && thing.stock>=0);
+
+
+      let sample= set.map(thing=>{
+        return{displayName:`${thing.name} ` ,displayPrice:`${thing.price}`}
+      }
+      )
+
+
+      let total = set.reduce((acc, num) => acc + num.price, 0);
+console.log(total);
+        // let sample=set.map(gad=>
+        
+        //     return {productname:${gad.name},price:${gad.price}}
+        // );
+        // const total = set.reduce((acc, item) => acc+ item.price,0);
+        console.log(products);
+        console.log(set);
+        console.log(sample);
+        console.log(total);
+    </script>
+</body>
+</html>
+
+</body>
+</html>
